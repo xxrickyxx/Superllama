@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -Force)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(cd /d/MatrixOS && find . -maxdepth 3 -type f ! -path './.git/*' ! -path './target/*' | sort)",
+      "PowerShell(qemu-system-x86_64 --version 2>&1)",
+      "WebFetch(domain:qemu.weilnetz.de)",
+      "PowerShell($elf = Get-Item \"D:\\\\MatrixOS\\\\target\\\\x86_64-matrixos\\\\release\\\\matrixos\"; Write-Host \"ELF size: $\\($elf.Length\\) bytes \\($\\([math]::Round\\($elf.Length/1MB, 1\\)\\) MB\\)\")",
+      "PowerShell(\\(Get-Item \"D:\\\\MatrixOS\\\\target\\\\x86_64-matrixos\\\\release\\\\matrixos\"\\).Length | ForEach-Object { \"$_ bytes \\({0:N2} MB\\)\" -f \\($_ / 1MB\\) })",
+      "Bash(llvm-readelf --sections \"D:/MatrixOS/target/x86_64-matrixos/release/matrixos\")",
+      "Bash(readelf --sections \"D:/MatrixOS/target/x86_64-matrixos/release/matrixos\")",
+      "PowerShell($size = \"C:\\\\Users\\\\spara\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\bin\\\\llvm-size.exe\"; & $size \"D:\\\\MatrixOS\\\\target\\\\x86_64-matrixos\\\\release\\\\matrixos\")",
+      "Bash(cargo build *)",
+      "Bash(python patch_iso.py)",
+      "Bash(git -C D:/MatrixOS add src/main.rs src/math.rs src/vga.rs)",
+      "Bash(git -C D:/MatrixOS status)",
+      "Bash(python -c \"with open\\('D:/MatrixOS/qwen2.5-3b-instruct-q4_k_m.gguf', 'rb'\\) as f: print\\('Magic:', f.read\\(4\\)\\)\")",
+      "Bash(\"/c/Program Files/Oracle/VirtualBox/VBoxManage.exe\" controlvm MatrixOS poweroff)",
+      "Bash(python -c ' *)",
+      "Bash(python D:/MatrixOS/patch_iso.py)",
+      "Bash(\"/c/Program Files/Oracle/VirtualBox/VBoxManage.exe\" startvm MatrixOS)",
+      "Bash(git -C D:/MatrixOS add -A)",
+      "Bash(git -C D:/MatrixOS log --oneline -5)",
+      "Bash(git -C D:/MatrixOS status --short)",
+      "Bash(git -C D:/MatrixOS add src/allocator.rs src/keyboard.rs src/main.rs src/vga.rs src/bundle.rs src/intent.rs src/pci.rs bundle_models.py)",
+      "Bash(git -C D:/MatrixOS show --stat bba7348)"
+    ]
+  }
+}
